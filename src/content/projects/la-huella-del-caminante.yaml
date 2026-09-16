@@ -1,0 +1,7 @@
+name: La Huella del Caminante
+url: https://lahuelladelcaminante.de
+order: 1
+description:
+  es: "Agenda y comunidad de música latina viva hecha en Berlín: conciertos, peñas y talleres, con carga de eventos por los propios organizadores."
+  en: "Agenda and community for live Latin American music made in Berlin: concerts, peñas and workshops, with events submitted by the organizers themselves."
+tags: [Next.js, TypeScript, Tailwind CSS, PostgreSQL]

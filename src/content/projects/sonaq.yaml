@@ -1,0 +1,7 @@
+name: Sonaq
+url: https://sonaq.com.ar
+order: 3
+description:
+  es: "Vitrinas y soportes a medida para guitarras e instrumentos, diseñados y fabricados en Argentina. Mobiliario que exhibe instrumentos como piezas de arte."
+  en: "Custom display cabinets and stands for guitars and instruments, designed and made in Argentina. Furniture that showcases instruments as art pieces."
+tags: [Next.js, React, Tailwind CSS]

@@ -1,0 +1,7 @@
+name: ViajarPaís
+url: https://viajarpais.com.ar
+order: 4
+description:
+  es: "Directorio de turismo en Argentina con información verificada: seis regiones y diez categorías de servicios, auditados por un equipo editorial."
+  en: "An Argentina travel directory with verified information: six regions and ten service categories, audited by an editorial team."
+tags: [Next.js, TypeScript, Tailwind CSS, i18n]

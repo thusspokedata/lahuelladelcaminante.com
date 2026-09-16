@@ -1,0 +1,7 @@
+name: BelRegistro
+url: https://belregistro.com
+order: 2
+description:
+  es: "Estudio de práctica y gestión de carrera para cantantes: vocalizaciones, seguimiento vocal, checklists de audición y agenda de presentaciones. Multi-idioma."
+  en: "A practice studio and career manager for singers: vocalizations, vocal tracking, audition checklists and performance scheduling. Multilingual."
+tags: [Next.js, TypeScript, Tailwind CSS, i18n]
