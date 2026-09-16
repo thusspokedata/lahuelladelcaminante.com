@@ -1,0 +1,22 @@
+---
+import { getLangFromUrl, useTranslations, localizedUrl } from '../i18n/utils';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props { alternateUrl: string; }
+const { alternateUrl } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<header style="border-bottom: 0.5px solid var(--border);">
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:18px; flex-wrap:wrap;">
+    <a href={localizedUrl(lang, 'home')} style="color:var(--accent-light); text-decoration:none; font-weight:500;">
+      la huella del caminante
+    </a>
+    <nav style="display:flex; gap:18px; align-items:center; font-size:14px;">
+      <a href={localizedUrl(lang, 'home')} style="color:var(--text); text-decoration:none;">{t('nav.projects')}</a>
+      <a href={localizedUrl(lang, 'notes')} style="color:var(--text-muted); text-decoration:none;">{t('nav.notes')}</a>
+      <span style="color:var(--text-dim);">·</span>
+      <LanguageSwitcher alternateUrl={alternateUrl} />
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,13 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import EmailLink from './EmailLink.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<footer style="border-top: 0.5px solid var(--border); margin-top:2rem;">
+  <div class="container" style="display:flex; gap:20px; padding-block:24px; font-size:14px; color:var(--text-muted);">
+    <a href="https://github.com/thusspokedata" target="_blank" rel="noopener" style="color:var(--text-muted); text-decoration:none;">{t('footer.github')}</a>
+    <EmailLink label={t('footer.email')} />
+  </div>
+</footer>

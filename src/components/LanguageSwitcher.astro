@@ -1,0 +1,13 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { alternateUrl: string; }
+const { alternateUrl } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const otherLang = lang === 'en' ? 'es' : 'en';
+---
+<a href={alternateUrl} hreflang={otherLang} rel="alternate" aria-label={t('lang.switch')}>
+  {t('lang.switch')}
+</a>
