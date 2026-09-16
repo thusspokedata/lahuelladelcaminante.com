@@ -1,8 +1,8 @@
 services:
   web:
     build: .
-    image: lahuelladelcaminante:latest
-    container_name: lahuelladelcaminante
+    image: lahuelladelcaminante-com:latest
+    container_name: lahuelladelcaminante-com
     ports:
       - "8087:80"
     restart: unless-stopped
