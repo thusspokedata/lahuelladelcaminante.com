@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const notes = (await getCollection('notes')).filter((n) => n.data.lang === 'en');
+  return notes.map((entry) => ({
+    params: { slug: entry.id.split('/').pop() },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const t = useTranslations('en');
+const dateStr = entry.data.date.toISOString().slice(0, 10);
+---
+<BaseLayout title={`${entry.data.title} — Notes`} description={entry.data.description} alternateUrl="/notas">
+  <article>
+    <a href="/en/notes" style="color:var(--accent-light); text-decoration:none; font-size:14px;">{t('notes.back')}</a>
+    <h1 style="font-size:28px; font-weight:500; margin:12px 0 4px;">{entry.data.title}</h1>
+    <time datetime={dateStr} style="font-size:13px; color:var(--text-dim);">{dateStr}</time>
+    <div style="margin-top:20px; line-height:1.7;">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
