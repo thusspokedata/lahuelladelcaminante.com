@@ -1,5 +1,27 @@
 ---
-interface Props { label: string; }
-const { label } = Astro.props;
+import { encodeEmail } from '../i18n/email';
+
+interface Props { label: string; address?: string; }
+const { label, address = 'contact@lahuelladelcaminante.com' } = Astro.props;
+const encoded = encodeEmail(address);
 ---
-<span>{label}</span>
+<a
+  href="#"
+  class="email-link"
+  data-e={encoded}
+  style="color:var(--text-muted); text-decoration:none;"
+>{label}</a>
+
+<script>
+  document.querySelectorAll('a.email-link').forEach((el) => {
+    const a = el as HTMLAnchorElement;
+    const enc = a.dataset.e;
+    if (!enc) return;
+    const addr = atob(enc);
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = 'mailto:' + addr;
+    });
+    a.setAttribute('title', addr);
+  });
+</script>
