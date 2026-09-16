@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectGrid from '../../components/ProjectGrid.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('en');
+---
+<BaseLayout title="La Huella del Caminante — Projects" description={t('site.tagline')} alternateUrl="/">
+  <h1 style="font-size:30px; font-weight:500; margin:0 0 6px;">{t('projects.title')}<span style="color:var(--accent);">.</span></h1>
+  <p style="color:var(--text-muted); margin:0 0 24px;">{t('site.tagline')}</p>
+  <ProjectGrid lang="en" />
+</BaseLayout>

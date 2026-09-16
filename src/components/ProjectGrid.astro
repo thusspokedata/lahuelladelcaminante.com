@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from './ProjectCard.astro';
+import type { Lang } from '../i18n/ui';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
+  {projects.map((p) => (
+    <ProjectCard
+      name={p.data.name}
+      description={p.data.description[lang]}
+      url={p.data.url}
+      tags={p.data.tags}
+    />
+  ))}
+</div>
