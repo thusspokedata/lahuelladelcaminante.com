@@ -6,6 +6,7 @@ export const ui = {
   es: {
     'nav.projects': 'Proyectos',
     'nav.notes': 'Notas',
+    'skip.link': 'Saltar al contenido',
     'site.tagline': 'Una vidriera de las cosas que construí en la web.',
     'projects.title': 'Proyectos',
     'notes.title': 'Notas',
@@ -18,6 +19,7 @@ export const ui = {
   en: {
     'nav.projects': 'Projects',
     'nav.notes': 'Notes',
+    'skip.link': 'Skip to content',
     'site.tagline': 'A showcase of the things I built on the web.',
     'projects.title': 'Projects',
     'notes.title': 'Notes',
