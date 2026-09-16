@@ -1,0 +1,8 @@
+dist/
+node_modules/
+.astro/
+.DS_Store
+npm-debug.log*
+
+# Internal working docs (brainstorming specs and implementation plans) — local only
+docs/superpowers/
