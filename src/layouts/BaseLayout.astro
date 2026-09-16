@@ -13,6 +13,9 @@ interface Props {
 const { title, description = '', alternateUrl } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const alternateLang = lang === 'en' ? 'es' : 'en';
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const alternateAbsoluteUrl = new URL(alternateUrl, Astro.site).href;
 ---
 
 <!doctype html>
@@ -22,6 +25,9 @@ const t = useTranslations(lang);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang={lang} href={canonicalUrl} />
+    <link rel="alternate" hreflang={alternateLang} href={alternateAbsoluteUrl} />
     <meta name="generator" content={Astro.generator} />
   </head>
   <body>

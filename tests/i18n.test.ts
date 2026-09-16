@@ -28,8 +28,7 @@ describe('useTranslations', () => {
     const t = useTranslations('en');
     expect(t('nav.projects')).toBe('Projects');
   });
-  it('falls back to es when a key is missing in the lang', () => {
-    const t = useTranslations('en');
+  it('returns the Spanish string for the given lang', () => {
     expect(useTranslations('es')('nav.projects')).toBe('Proyectos');
   });
 });
