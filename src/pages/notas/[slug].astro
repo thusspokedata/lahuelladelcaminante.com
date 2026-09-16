@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { useTranslations } from '../../i18n/utils';
 
 export async function getStaticPaths() {
-  const notes = (await getCollection('notes')).filter((n) => n.data.lang === 'es');
+  const notes = (await getCollection('notes')).filter((n) => n.data.lang === 'es' && !n.data.draft);
   return notes.map((entry) => ({
     params: { slug: entry.id.split('/').pop() },
     props: { entry },
