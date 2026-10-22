@@ -2,7 +2,7 @@
 import { encodeEmail } from '../i18n/email';
 
 interface Props { label: string; address?: string; }
-const { label, address = 'contact@lahuelladelcaminante.com' } = Astro.props;
+const { label, address = 'contact@nohuella.eu' } = Astro.props;
 const encoded = encodeEmail(address);
 ---
 <a
