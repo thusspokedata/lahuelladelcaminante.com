@@ -2,9 +2,9 @@ import { describe, it, expect } from 'vitest';
 import { encodeEmail, decodeEmail } from '../src/i18n/email';
 
 describe('email codec', () => {
-  const addr = 'contact@lahuelladelcaminante.com';
+  const addr = 'contact@nohuella.eu';
   it('base64-encodes the address', () => {
-    expect(encodeEmail(addr)).toBe('Y29udGFjdEBsYWh1ZWxsYWRlbGNhbWluYW50ZS5jb20=');
+    expect(encodeEmail(addr)).toBe('Y29udGFjdEBub2h1ZWxsYS5ldQ==');
   });
   it('round-trips', () => {
     expect(decodeEmail(encodeEmail(addr))).toBe(addr);

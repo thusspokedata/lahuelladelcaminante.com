@@ -1,4 +1,4 @@
-# lahuelladelcaminante.com
+# nohuella.eu
 
 Sitio portfolio estático hecho con Astro. Bilingüe (ES/EN), modo oscuro.
 
